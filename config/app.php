@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\ServiceProvider;
 return [
 
     /*
@@ -122,5 +122,25 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+        /*
+    |--------------------------------------------------------------------------
+    | Autoloaded Service Providers
+    |--------------------------------------------------------------------------
+    */
+
+    'providers' => ServiceProvider::defaultProviders()->merge([
+        /*
+         * Package Service Providers...
+         */
+
+        /*
+         * Application Service Providers...
+         */
+        App\Providers\AppServiceProvider::class,
+        
+        // ✅ AAPKA NEW SERVICE PROVIDER YAHAN ADD KAREIN
+        App\Providers\RepositoryServiceProvider::class,
+        
+    ])->toArray(),
 
 ];

@@ -6,7 +6,7 @@ use App\Models\Tag;
 use App\Interfaces\TagRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 
-class TagRepository
+class TagRepository implements TagRepositoryInterface
 {
     /**
      * Create a new class instance.

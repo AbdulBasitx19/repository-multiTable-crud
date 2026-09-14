@@ -13,6 +13,17 @@
 
         <form action="{{ route('posts.store') }}" method="POST">
             @csrf
+            
+            @if ($errors->any())
+                <div style="background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #f5c6cb;">
+                    <strong>Validation Errors:</strong>
+                    <ul style="margin: 10px 0 0 20px; padding: 0;">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
             <!-- Hidden User ID (Hardcoded for now) -->
             <input type="hidden" name="user_id" value="1">

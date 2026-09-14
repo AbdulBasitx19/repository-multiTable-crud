@@ -14,24 +14,11 @@ use App\Repositories\TagRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
-    public function register(): void
+     public function register(): void
     {
-        $this->app->bind(
-            PostRepositoryInterface::class,      
-            PostRepository::class              
-        );
-
-        // Comment Repository Binding
-        $this->app->bind(
-            CommentRepositoryInterface::class,   
-            CommentRepository::class             
-        );
-
-        // Tag Repository Binding
-        $this->app->bind(
-            TagRepositoryInterface::class,       
-            TagRepository::class                 
-        );
+        $this->app->bind(PostRepositoryInterface::class, PostRepository::class);
+        $this->app->bind(CommentRepositoryInterface::class, CommentRepository::class);
+        $this->app->bind(TagRepositoryInterface::class, TagRepository::class);
     }
 
 

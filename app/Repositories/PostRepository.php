@@ -46,7 +46,7 @@ class PostRepository implements PostRepositoryInterface
 
     public function syncTags(int $postId, array $tagIds): void 
     {
-        $post = $this->postModel->findOrFail($id);
+        $post = $this->postModel->findOrFail($postId);
         $post->tags()->sync($tagIds);
     }
 
